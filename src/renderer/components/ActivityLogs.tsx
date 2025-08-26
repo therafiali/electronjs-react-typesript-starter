@@ -85,30 +85,6 @@ const ActivityLogs: React.FC<ActivityLogsProps> = ({ onBackToDashboard }) => {
         <h1 style={{ margin: 0, color: '#2c3e50' }}>📊 Activity Logs</h1>
         <div style={{ display: 'flex', gap: '10px' }}>
           <button
-            onClick={async () => {
-              if (confirm('Are you sure you want to clear all activity logs? This action cannot be undone.')) {
-                try {
-                  await window.electronAPI.clearActivityLogs();
-                  await loadActivityLogs(); // Refresh the logs
-                } catch (error) {
-                  console.error('Error clearing activity logs:', error);
-                  alert('Error clearing activity logs!');
-                }
-              }
-            }}
-            style={{
-              background: '#e74c3c',
-              color: 'white',
-              border: 'none',
-              padding: '10px 20px',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              fontSize: '14px'
-            }}
-          >
-            🗑️ Clear All Logs
-          </button>
-          <button
             onClick={onBackToDashboard}
             style={{
               background: '#3498db',

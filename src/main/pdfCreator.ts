@@ -134,6 +134,14 @@ class PDFCreator {
 
   private getPossibleLogoPaths(): string[] {
     return [
+      // Production build paths (dist folder)
+      path.join(__dirname, "../logo.png"),
+      path.join(__dirname, "../renderer/components/logo.png"),
+      path.join(__dirname, "../Rama Resort Logo White without BG .png"),
+      path.join(__dirname, "../../dist/logo.png"),
+      path.join(__dirname, "../../dist/Rama Resort Logo White without BG .png"),
+      path.join(__dirname, "../../dist/renderer/components/logo.png"),
+      // Development paths
       path.join(__dirname, "../renderer/components/img/Rama Resort Logo White without BG .png"),
       path.join(__dirname, "../../src/renderer/components/img/Rama Resort Logo White without BG .png"),
       path.join(__dirname, "../renderer/components/img/Rama Resort Logo White without BG.png"),

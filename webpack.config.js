@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -36,6 +37,18 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/renderer/index.html',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: './src/renderer/components/img/Rama Resort Logo White without BG .png',
+          to: 'logo.png',
+        },
+        {
+          from: './src/renderer/components/img/Rama Resort Logo White without BG .png',
+          to: 'renderer/components/logo.png',
+        },
+      ],
     }),
   ],
   devServer: {

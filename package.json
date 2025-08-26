@@ -11,7 +11,7 @@
     "build": "npm run build:renderer && npm run build:main",
     "build:renderer": "webpack --mode production",
     "build:main": "tsc -p tsconfig.main.json",
-    "dist": "npm run build && electron-builder", 
+    "dist": "npm run build && electron-builder",
     "postinstall": "electron-builder install-app-deps"
   },
   "build": {
@@ -22,7 +22,8 @@
     },
     "files": [
       "dist/**/*",
-      "node_modules/**/*"
+      "node_modules/**/*",
+      "src/renderer/components/img/Rama Resort Logo White without BG .png"
     ],
     "mac": {
       "category": "public.app-category.developer-tools"
@@ -37,6 +38,7 @@
   "devDependencies": {
     "@types/node": "^24.2.0",
     "concurrently": "^8.2.2",
+    "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^7.1.2",
     "electron": "^37.2.6",
     "electron-builder": "^26.0.12",
